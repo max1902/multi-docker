@@ -60,4 +60,4 @@ jobs:
       
       -
         name: Push
-        run: docker push max/${{ matrix.image }}:${{ github.sha }}
+        run: docker push makc1902/${{ matrix.image }}:${{ github.sha }}
