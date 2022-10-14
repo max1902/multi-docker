@@ -36,6 +36,9 @@ jobs:
           -
             context: 'worker'
             image: 'multi-worker'
+          -
+            context: 'nginx'
+            image: 'multi-nginx'
 
     steps:
       -
