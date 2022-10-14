@@ -8,9 +8,6 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
-    permissions:
-      contents: 'read|write'
-
     steps:
       -
         name: Checkout
@@ -27,8 +24,6 @@ jobs:
   build-and-push:
     needs: tests
     runs-on: ubuntu-latest
-    permissions:
-      contents: 'read|write'
     strategy:
       matrix:
         include:
