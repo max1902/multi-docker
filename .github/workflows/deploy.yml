@@ -9,7 +9,7 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     permissions:
-      contents: 'read'
+      contents: 'read|write'
 
     steps:
       -
@@ -19,16 +19,16 @@ jobs:
       -
         name: Build client tests
         run: |-
-          docker build -t mejdev/react-test -f ./client/Dockerfile.dev ./client
+          docker build -t max/react-test -f ./client/Dockerfile.dev ./client
       -
         name: Run client tests
-        run: docker run -e CI=true mejdev/react-test npm test
+        run: docker run -e CI=true max/react-test npm test
   
   build-and-push:
     needs: tests
     runs-on: ubuntu-latest
     permissions:
-      contents: 'read'
+      contents: 'read|write'
     strategy:
       matrix:
         include:
