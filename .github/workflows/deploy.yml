@@ -16,10 +16,10 @@ jobs:
       -
         name: Build client tests
         run: |-
-          docker build -t max/react-test -f ./client/Dockerfile.dev ./client
+          docker build -t makc1902/react-test -f ./client/Dockerfile.dev ./client
       -
         name: Run client tests
-        run: docker run -e CI=true max/react-test npm test
+        run: docker run -e CI=true makc1902/react-test npm test
   
   build-and-push:
     needs: tests
@@ -53,8 +53,8 @@ jobs:
         name: Build
         run: |-
           docker build \
-            -t max/${{ matrix.image }}:latest \
-            -t max/${{ matrix.image }}:${{ github.sha }} \
+            -t makc1902/${{ matrix.image }}:latest \
+            -t makc1902/${{ matrix.image }}:${{ github.sha }} \
             -f ./${{ matrix.context }}/Dockerfile \
             ./${{ matrix.context }}
       
